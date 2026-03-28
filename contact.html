@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Uttorer Karukaj | Contact Us - Handmade Crafts from Bangladesh</title>
+  <!-- Tailwind CSS v3 + Google Fonts + Font Awesome 6 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Form input focus effects */
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      ring: 2px solid #2c5e2e;
+      border-color: #b45309;
+      box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.1);
+    }
+    /* Card and button hover effects */
+    .contact-card {
+      transition: all 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+    }
+    .btn-hover {
+      transition: all 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    }
+    .social-icon {
+      transition: all 0.2s ease;
+    }
+    .social-icon:hover {
+      transform: translateY(-3px);
+      color: #b45309;
+    }
+    .sticky-nav {
+      backdrop-filter: blur(4px);
+      transition: all 0.2s;
+    }
+    /* Map container responsive */
+    .map-container iframe {
+      transition: all 0.3s;
+    }
+    .map-container:hover iframe {
+      filter: brightness(1.02);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- ========== TOP ANNOUNCEMENT BAR ========== -->
+  <div class="bg-amber-800 text-amber-50 text-sm py-2.5 text-center font-medium tracking-wide shadow-sm">
+    <div class="container mx-auto px-4">
+      <i class="fas fa-hands-clapping mr-2 text-amber-200"></i>
+      Authentic Handmade Products from Northern Bangladesh — Crafted with love & tradition
+    </div>
+  </div>
+
+  <!-- ========== NAVIGATION BAR (Sticky) ========== -->
+  <header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-amber-100 shadow-sm transition-all duration-200">
+    <div class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="text-2xl font-bold tracking-tight">
+        <span class="text-emerald-800">Uttorer</span>
+        <span class="text-amber-700"> Karukaj</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-emerald-700 transition">Home</a>
+        <a href="shop.html" class="hover:text-emerald-700 transition">Shop</a>
+        <a href="categories.html" class="hover:text-emerald-700 transition">Categories</a>
+        <a href="about.html" class="hover:text-emerald-700 transition">About Us</a>
+        <a href="contact.html" class="text-emerald-700 border-b-2 border-emerald-600 pb-1">Contact</a>
+      </div>
+
+      <!-- Icons + Mobile menu -->
+      <div class="flex items-center gap-4">
+        <button class="text-gray-600 hover:text-emerald-700 text-xl"><i class="fas fa-search"></i></button>
+        <button class="text-gray-600 hover:text-emerald-700 text-xl relative cart-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="absolute -top-2 -right-3 bg-amber-600 text-white text-xs font-bold rounded-full px-1.5 py-0.5 min-w-[18px] text-center cart-count">0</span>
+        </button>
+        <button class="text-gray-600 hover:text-emerald-700 text-xl"><i class="fas fa-user"></i></button>
+        <button id="mobile-menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-t border-amber-100 pb-3 px-4 flex flex-col space-y-3 text-gray-700 font-medium">
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Home</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Shop</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Categories</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">About Us</a>
+      <a href="#" class="block py-2 text-emerald-700 font-semibold">Contact</a>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO / BANNER ========== -->
+  <section class="relative bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(30,40,20,0.8), rgba(20,30,10,0.75)), url('https://images.pexels.com/photos/4013168/pexels-photo-4013168.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; min-height: 45vh;">
+    <div class="container mx-auto px-4 flex flex-col justify-center items-center text-center h-full min-h-[45vh] py-16">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">Get in Touch</h1>
+      <p class="text-lg md:text-xl text-amber-50/90 max-w-2xl">We'd love to hear from you. Reach out for orders, queries, or collaborations — our team is here to help.</p>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT FORM + INFORMATION SECTION (Two Columns) ========== -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Left Column: Contact Form -->
+        <div class="bg-gradient-to-br from-white to-amber-50/30 rounded-2xl shadow-xl p-6 md:p-8 border border-amber-100">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Send Us a Message</h2>
+          <div class="w-20 h-1 bg-amber-600 mb-6 rounded-full"></div>
+          <p class="text-gray-600 mb-6">Have a question about our products or custom orders? Fill out the form and we'll get back to you within 24 hours.</p>
+          
+          <form id="contactForm" class="space-y-5">
+            <!-- Name Input -->
+            <div>
+              <label for="name" class="block text-gray-700 font-medium mb-2"><i class="fas fa-user mr-2 text-amber-600"></i>Full Name *</label>
+              <input type="text" id="name" name="name" required class="form-input w-full px-5 py-3 border border-gray-300 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition bg-white" placeholder="Your name">
+            </div>
+            
+            <!-- Email Input -->
+            <div>
+              <label for="email" class="block text-gray-700 font-medium mb-2"><i class="fas fa-envelope mr-2 text-amber-600"></i>Email Address *</label>
+              <input type="email" id="email" name="email" required class="form-input w-full px-5 py-3 border border-gray-300 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition bg-white" placeholder="your@email.com">
+            </div>
+            
+            <!-- Phone Input -->
+            <div>
+              <label for="phone" class="block text-gray-700 font-medium mb-2"><i class="fas fa-phone-alt mr-2 text-amber-600"></i>Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-input w-full px-5 py-3 border border-gray-300 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition bg-white" placeholder="+880 1XXX-XXXXXX">
+            </div>
+            
+            <!-- Message Textarea -->
+            <div>
+              <label for="message" class="block text-gray-700 font-medium mb-2"><i class="fas fa-comment-dots mr-2 text-amber-600"></i>Message *</label>
+              <textarea id="message" name="message" rows="5" required class="form-textarea w-full px-5 py-3 border border-gray-300 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition bg-white" placeholder="Tell us about your inquiry, custom order request, or feedback..."></textarea>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 rounded-xl transition btn-hover shadow-md flex items-center justify-center gap-2">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            
+            <!-- Form feedback message -->
+            <div id="formFeedback" class="text-sm text-center mt-3 hidden"></div>
+          </form>
+        </div>
+        
+        <!-- Right Column: Contact Information -->
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Connect With Us</h2>
+            <div class="w-20 h-1 bg-amber-600 mb-6 rounded-full"></div>
+            <p class="text-gray-600">We're available Monday to Friday, 9 AM - 6 PM (BST). Reach out through any of these channels.</p>
+          </div>
+          
+          <!-- Contact Details Cards -->
+          <div class="space-y-4">
+            <!-- Address Card -->
+            <div class="contact-card bg-white rounded-xl p-5 shadow-md border border-amber-100 flex items-start gap-4 hover:shadow-lg transition">
+              <div class="bg-amber-100 p-3 rounded-full"><i class="fas fa-map-marker-alt text-amber-700 text-xl"></i></div>
+              <div><h3 class="font-bold text-gray-800 text-lg">Our Workshop & Office</h3><p class="text-gray-600">House 42, Road 7, Rangpur City Center, Rangpur, Bangladesh — 5400</p></div>
+            </div>
+            <!-- Phone Card -->
+            <div class="contact-card bg-white rounded-xl p-5 shadow-md border border-amber-100 flex items-start gap-4 hover:shadow-lg transition">
+              <div class="bg-amber-100 p-3 rounded-full"><i class="fas fa-phone-alt text-amber-700 text-xl"></i></div>
+              <div><h3 class="font-bold text-gray-800 text-lg">Phone / WhatsApp</h3><p class="text-gray-600">+880 1712-345678 <br> +880 1987-654321</p></div>
+            </div>
+            <!-- Email Card -->
+            <div class="contact-card bg-white rounded-xl p-5 shadow-md border border-amber-100 flex items-start gap-4 hover:shadow-lg transition">
+              <div class="bg-amber-100 p-3 rounded-full"><i class="fas fa-envelope text-amber-700 text-xl"></i></div>
+              <div><h3 class="font-bold text-gray-800 text-lg">Email Us</h3><p class="text-gray-600">hello@uttorerkarukaj.com <br> support@uttorerkarukaj.com</p></div>
+            </div>
+          </div>
+          
+          <!-- Social Media Links -->
+          <div class="bg-amber-50/50 rounded-xl p-6 border border-amber-200">
+            <h3 class="font-bold text-gray-800 text-lg mb-4"><i class="fas fa-share-alt mr-2 text-amber-600"></i>Follow Our Journey</h3>
+            <div class="flex gap-5 text-3xl">
+              <a href="#" class="text-gray-600 social-icon hover:text-amber-700 transition"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-gray-600 social-icon hover:text-amber-700 transition"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-600 social-icon hover:text-amber-700 transition"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" class="text-gray-600 social-icon hover:text-amber-700 transition"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="text-gray-600 social-icon hover:text-amber-700 transition"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="text-sm text-gray-500 mt-3">Stay updated with new collections, artisan stories, and exclusive offers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAP SECTION (Google Maps Embed) ========== -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Visit Our <span class="text-emerald-700">Workshop</span></h2>
+        <div class="w-24 h-1 bg-amber-600 mx-auto mt-3 rounded-full"></div>
+        <p class="text-gray-600 mt-4">Come see our crafts in person or schedule a visit to meet our artisans</p>
+      </div>
+      <div class="map-container rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115225.84329283266!2d89.2101456!3d25.7437979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e32de6fca6019b%3A0x9b7b8c8e5b8a5e3e!2sRangpur%2C%20Bangladesh!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" 
+          width="100%" 
+          height="400" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <p class="text-center text-sm text-gray-500 mt-3"><i class="fas fa-location-dot text-amber-600"></i> Uttorer Karukaj, Rangpur City, Bangladesh — Main Workshop & Showroom</p>
+    </div>
+  </section>
+
+  <!-- ========== CALL-TO-ACTION SECTION ========== -->
+  <section class="py-16 bg-gradient-to-r from-emerald-800 to-amber-700 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Explore Our Handmade Collection</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">Discover authentic bamboo, jute, and traditional crafts — each piece tells a story of Bangladeshi heritage.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#" class="bg-white text-emerald-800 hover:bg-amber-50 font-semibold px-8 py-3 rounded-full shadow-lg transition btn-hover inline-flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Shop Now</a>
+        <a href="#" class="bg-transparent border-2 border-white hover:bg-white/20 text-white font-semibold px-8 py-3 rounded-full transition btn-hover inline-flex items-center gap-2"><i class="fas fa-compass"></i> Explore Categories</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-gray-900 text-gray-300 pt-12 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="text-2xl font-bold mb-3"><span class="text-emerald-400">Uttorer</span><span class="text-amber-400"> Karukaj</span></div>
+          <p class="text-sm">Preserving Northern Bangladesh's heritage through handmade bamboo, jute & traditional crafts. Each purchase empowers rural artisans.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-amber-400 transition">Shop</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition">Categories</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition">About Our Story</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition">Sustainability</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-sm">
+            <li><i class="fas fa-map-marker-alt mr-2 text-amber-400"></i> Rangpur, Bangladesh</li>
+            <li><i class="fas fa-phone-alt mr-2 text-amber-400"></i> +880 1712-345678</li>
+            <li><i class="fas fa-envelope mr-2 text-amber-400"></i> hello@uttorerkarukaj.com</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Follow Us</h4>
+          <div class="flex space-x-4 text-2xl">
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="mt-4"><p class="text-xs">Handcrafted with ❤️ in Bangladesh</p></div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-500">© 2025 Uttorer Karukaj — Authentic Handmade Crafts. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== CART FUNCTIONALITY ==========
+    let cartItems = [];
+    
+    function updateCartBadge() {
+      const totalQty = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+      const badge = document.querySelector('.cart-count');
+      if (badge) badge.innerText = totalQty;
+    }
+    
+    function addToCartLogic(id, name, price) {
+      const existing = cartItems.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cartItems.push({ id, name, price, quantity: 1 });
+      }
+      updateCartBadge();
+      // Toast notification
+      const toast = document.createElement('div');
+      toast.innerText = `✓ ${name} added to cart`;
+      toast.className = "fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-5 py-2 rounded-full text-sm z-50 shadow-lg";
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 1800);
+    }
+    
+    // Cart icon click handler
+    document.querySelector('.cart-btn')?.addEventListener('click', () => {
+      if (cartItems.length === 0) {
+        alert("Your cart is empty. Explore our beautiful handmade collection!");
+      } else {
+        let msg = "🛒 Your Cart:\n\n";
+        cartItems.forEach(i => msg += `${i.name} x${i.quantity} = ৳${i.price * i.quantity}\n`);
+        msg += `\nTotal: ৳${cartItems.reduce((s, i) => s + (i.price * i.quantity), 0)}`;
+        alert(msg);
+      }
+    });
+    
+    // ========== FORM SUBMISSION WITH VALIDATION ==========
+    const contactForm = document.getElementById('contactForm');
+    const formFeedback = document.getElementById('formFeedback');
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        // Additional validation
+        if (!name || !email || !message) {
+          showFeedback('Please fill in all required fields (*).', 'error');
+          return;
+        }
+        
+        if (!isValidEmail(email)) {
+          showFeedback('Please enter a valid email address.', 'error');
+          return;
+        }
+        
+        // Simulate form submission (production would send to server)
+        showFeedback(`✨ Thank you ${name}! Your message has been sent. We'll get back to you within 24 hours. ✨`, 'success');
+        
+        // Reset form after successful submission
+        contactForm.reset();
+        
+        // Optional: You can add AJAX submission here
+        console.log('Form submitted:', { name, email, phone, message });
+      });
+    }
+    
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    
+    function showFeedback(message, type) {
+      formFeedback.textContent = message;
+      formFeedback.classList.remove('hidden', 'text-green-600', 'text-red-600');
+      if (type === 'success') {
+        formFeedback.classList.add('text-green-600', 'bg-green-50', 'p-3', 'rounded-lg');
+      } else {
+        formFeedback.classList.add('text-red-600', 'bg-red-50', 'p-3', 'rounded-lg');
+      }
+      formFeedback.classList.remove('hidden');
+      
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        formFeedback.classList.add('hidden');
+        formFeedback.classList.remove('bg-green-50', 'bg-red-50', 'p-3');
+      }, 5000);
+    }
+    
+    // ========== MOBILE MENU TOGGLE ==========
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    // ========== STICKY NAVBAR EFFECT ==========
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 10) {
+        nav.classList.add('shadow-md', 'bg-white/95');
+      } else {
+        nav.classList.remove('shadow-md');
+      }
+    });
+    
+    // ========== ADD SAMPLE PRODUCT ADD BUTTONS FOR DEMO ==========
+    // Add quick sample product buttons to contact cards for interactive demo
+    setTimeout(() => {
+      const addSampleBtn = document.createElement('button');
+      addSampleBtn.innerHTML = '<i class="fas fa-gift"></i> Try Sample Product';
+      addSampleBtn.className = 'mt-4 text-sm bg-amber-100 hover:bg-amber-200 text-amber-800 px-4 py-2 rounded-full transition w-full';
+      addSampleBtn.addEventListener('click', () => {
+        addToCartLogic(999, 'Artisan Bamboo Coaster Set', 450);
+      });
+      const contactCardsContainer = document.querySelector('.contact-card:last-child');
+      if (contactCardsContainer && contactCardsContainer.querySelector('div:last-child')) {
+        const parentDiv = contactCardsContainer.querySelector('div:last-child');
+        if (parentDiv && !parentDiv.querySelector('.try-sample-btn')) {
+          addSampleBtn.classList.add('try-sample-btn');
+          parentDiv.appendChild(addSampleBtn);
+        }
+      }
+    }, 100);
+  </script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Uttorer Karukaj | About Us - Authentic Handmade Crafts from Bangladesh</title>
+  <!-- Tailwind CSS v3 + Google Fonts + Font Awesome 6 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Hover effects for cards and images */
+    .story-image {
+      transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .story-image:hover {
+      transform: scale(1.02);
+    }
+    .mission-card {
+      transition: all 0.3s ease;
+    }
+    .mission-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+    }
+    .artisan-card {
+      transition: all 0.35s ease;
+    }
+    .artisan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+    }
+    .testimonial-card {
+      transition: all 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
+    }
+    .btn-hover {
+      transition: all 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    }
+    .sticky-nav {
+      backdrop-filter: blur(4px);
+      transition: all 0.2s;
+    }
+    .counter-number {
+      transition: all 0.3s;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- ========== TOP ANNOUNCEMENT BAR ========== -->
+  <div class="bg-amber-800 text-amber-50 text-sm py-2.5 text-center font-medium tracking-wide shadow-sm">
+    <div class="container mx-auto px-4">
+      <i class="fas fa-hands-clapping mr-2 text-amber-200"></i>
+      Authentic Handmade Products from Northern Bangladesh — Crafted with love & tradition
+    </div>
+  </div>
+
+  <!-- ========== NAVIGATION BAR (Sticky) ========== -->
+  <header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-amber-100 shadow-sm transition-all duration-200">
+    <div class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="text-2xl font-bold tracking-tight">
+        <span class="text-emerald-800">Uttorer</span>
+        <span class="text-amber-700"> Karukaj</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-emerald-700 transition">Home</a>
+        <a href="shop.html" class="hover:text-emerald-700 transition">Shop</a>
+        <a href="categories.html" class="hover:text-emerald-700 transition">Categories</a>
+        <a href="#" class="text-emerald-700 border-b-2 border-emerald-600 pb-1">About Us</a>
+        <a href="contact.html" class="hover:text-emerald-700 transition">Contact</a>
+      </div>
+
+      <!-- Icons + Mobile menu -->
+      <div class="flex items-center gap-4">
+        <button class="text-gray-600 hover:text-emerald-700 text-xl"><i class="fas fa-search"></i></button>
+        <button class="text-gray-600 hover:text-emerald-700 text-xl relative cart-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="absolute -top-2 -right-3 bg-amber-600 text-white text-xs font-bold rounded-full px-1.5 py-0.5 min-w-[18px] text-center cart-count">0</span>
+        </button>
+        <button class="text-gray-600 hover:text-emerald-700 text-xl"><i class="fas fa-user"></i></button>
+        <button id="mobile-menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-t border-amber-100 pb-3 px-4 flex flex-col space-y-3 text-gray-700 font-medium">
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Home</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Shop</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Categories</a>
+      <a href="#" class="block py-2 text-emerald-700 font-semibold">About Us</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Contact</a>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO / BANNER ========== -->
+  <section class="relative bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(30,40,20,0.8), rgba(20,30,10,0.75)), url('https://images.pexels.com/photos/3912520/pexels-photo-3912520.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; min-height: 45vh;">
+    <div class="container mx-auto px-4 flex flex-col justify-center items-center text-center h-full min-h-[45vh] py-16">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">About Uttorer Karukaj</h1>
+      <p class="text-lg md:text-xl text-amber-50/90 max-w-2xl">Authentic Handmade Crafts from Northern Bangladesh — Preserving heritage, empowering artisans, celebrating tradition.</p>
+    </div>
+  </section>
+
+  <!-- ========== BRAND STORY SECTION (Two Column) ========== -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Column: Image -->
+        <div class="rounded-2xl overflow-hidden shadow-xl">
+          <img src="https://images.pexels.com/photos/4013161/pexels-photo-4013161.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Artisans crafting bamboo products in Northern Bangladesh" class="story-image w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <!-- Right Column: Text -->
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our <span class="text-emerald-700">Story</span></h2>
+          <div class="w-20 h-1 bg-amber-600 mb-6 rounded-full"></div>
+          <p class="text-gray-600 leading-relaxed mb-4">Founded in the heart of Northern Bangladesh, <span class="font-semibold text-emerald-700">Uttorer Karukaj</span> began with a simple yet profound vision: to preserve and celebrate the centuries-old craftsmanship of rural artisans from Rangpur, Dinajpur, and the surrounding regions.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">What started as a small community initiative has grown into a brand that connects talented artisans with craft lovers worldwide. Each bamboo basket, jute product, and traditional handicraft tells a unique story — of patience, skill, and cultural heritage passed down through generations.</p>
+          <p class="text-gray-600 leading-relaxed mb-6">We believe in the beauty of imperfection, the value of handmade, and the importance of sustainable practices. Every purchase directly supports local families, preserves dying art forms, and promotes eco-friendly materials that honor our planet.</p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i><span>100+ Artisans Empowered</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i><span>15+ Villages Supported</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i><span>100% Eco-friendly Materials</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OUR MISSION & VISION SECTION (3 Feature Cards) ========== -->
+  <section class="py-16 bg-gradient-to-b from-amber-50/40 to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Our <span class="text-emerald-700">Purpose</span></h2>
+        <div class="w-24 h-1 bg-amber-600 mx-auto mt-3 rounded-full"></div>
+        <p class="text-gray-600 mt-4 max-w-xl mx-auto">Guided by tradition, driven by sustainability</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Mission Card -->
+        <div class="mission-card bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl border border-amber-100">
+          <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5">
+            <i class="fas fa-hands-helping text-3xl text-emerald-700"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Our Mission</h3>
+          <p class="text-gray-600">To promote and preserve traditional Bangladeshi craftsmanship by connecting rural artisans with global markets, ensuring fair wages and sustainable livelihoods.</p>
+        </div>
+        <!-- Vision Card -->
+        <div class="mission-card bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl border border-amber-100">
+          <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5">
+            <i class="fas fa-globe-asia text-3xl text-emerald-700"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Our Vision</h3>
+          <p class="text-gray-600">To become the leading platform for authentic Bangladeshi handmade crafts, inspiring a global movement toward conscious consumerism and eco-friendly living.</p>
+        </div>
+        <!-- Values Card -->
+        <div class="mission-card bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl border border-amber-100">
+          <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5">
+            <i class="fas fa-leaf text-3xl text-emerald-700"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Core Values</h3>
+          <p class="text-gray-600">Authenticity, sustainability, quality craftsmanship, community empowerment, and cultural preservation at the heart of everything we do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TEAM / ARTISANS SECTION ========== -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Meet Our <span class="text-emerald-700">Master Artisans</span></h2>
+        <div class="w-24 h-1 bg-amber-600 mx-auto mt-3 rounded-full"></div>
+        <p class="text-gray-600 mt-4">The skilled hands behind every beautiful creation</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Artisan 1 -->
+        <div class="artisan-card bg-gradient-to-br from-white to-amber-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl text-center pb-6">
+          <div class="h-64 overflow-hidden bg-amber-100">
+            <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="Artisan" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-800">Rina Begum</h3>
+            <p class="text-amber-600 font-medium">Bamboo Weaving Expert</p>
+            <p class="text-sm text-gray-500 mt-2">20+ years of experience in traditional bamboo crafts</p>
+          </div>
+        </div>
+        <!-- Artisan 2 -->
+        <div class="artisan-card bg-gradient-to-br from-white to-amber-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl text-center pb-6">
+          <div class="h-64 overflow-hidden bg-amber-100">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Artisan" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-800">Abdul Karim</h3>
+            <p class="text-amber-600 font-medium">Jute Craft Specialist</p>
+            <p class="text-sm text-gray-500 mt-2">Preserving jute weaving traditions for 3 generations</p>
+          </div>
+        </div>
+        <!-- Artisan 3 -->
+        <div class="artisan-card bg-gradient-to-br from-white to-amber-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl text-center pb-6">
+          <div class="h-64 overflow-hidden bg-amber-100">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Artisan" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-800">Shamima Akhter</h3>
+            <p class="text-amber-600 font-medium">Nakshi Kantha Artist</p>
+            <p class="text-sm text-gray-500 mt-2">Master of traditional embroidery & quilting</p>
+          </div>
+        </div>
+        <!-- Artisan 4 -->
+        <div class="artisan-card bg-gradient-to-br from-white to-amber-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl text-center pb-6">
+          <div class="h-64 overflow-hidden bg-amber-100">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Artisan" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-800">Mizanur Rahman</h3>
+            <p class="text-amber-600 font-medium">Wood & Bamboo Carver</p>
+            <p class="text-sm text-gray-500 mt-2">Intricate designs inspired by nature</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS / QUOTES SECTION ========== -->
+  <section class="py-16 bg-amber-50/30">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">What Our <span class="text-emerald-700">Community Says</span></h2>
+        <div class="w-24 h-1 bg-amber-600 mx-auto mt-3 rounded-full"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card bg-white p-6 rounded-2xl shadow-md border border-amber-100">
+          <i class="fas fa-quote-left text-3xl text-amber-400 mb-4"></i>
+          <p class="text-gray-600 mb-4">"Uttorer Karukaj represents the soul of Bangladeshi craftsmanship. Their dedication to preserving traditional art forms while empowering rural women is truly inspiring."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-amber-200 rounded-full overflow-hidden"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="customer" class="w-full h-full object-cover"></div>
+            <div><h4 class="font-bold">Sarah Thompson</h4><p class="text-sm text-gray-500">Social Entrepreneur</p></div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card bg-white p-6 rounded-2xl shadow-md border border-amber-100">
+          <i class="fas fa-quote-left text-3xl text-amber-400 mb-4"></i>
+          <p class="text-gray-600 mb-4">"The quality of their bamboo products is unmatched. Knowing that each purchase directly supports local artisans makes it even more special. Highly recommended!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-amber-200 rounded-full overflow-hidden"><img src="https://randomuser.me/api/portraits/men/52.jpg" alt="customer" class="w-full h-full object-cover"></div>
+            <div><h4 class="font-bold">Michael Chen</h4><p class="text-sm text-gray-500">Loyal Customer</p></div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card bg-white p-6 rounded-2xl shadow-md border border-amber-100">
+          <i class="fas fa-quote-left text-3xl text-amber-400 mb-4"></i>
+          <p class="text-gray-600 mb-4">"A beautiful brand that celebrates heritage and sustainability. The jute collection is my absolute favorite — eco-friendly and stylish!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-amber-200 rounded-full overflow-hidden"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="customer" class="w-full h-full object-cover"></div>
+            <div><h4 class="font-bold">Priya Das</h4><p class="text-sm text-gray-500">Interior Designer</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CALL-TO-ACTION SECTION ========== -->
+  <section class="py-16 bg-gradient-to-r from-emerald-800 to-amber-700 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Experience Authentic Craftsmanship</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">Join us in celebrating Bangladeshi heritage. Explore our collection and bring home a piece of tradition.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#" class="bg-white text-emerald-800 hover:bg-amber-50 font-semibold px-8 py-3 rounded-full shadow-lg transition btn-hover inline-flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Shop Now</a>
+        <a href="#" class="bg-transparent border-2 border-white hover:bg-white/20 text-white font-semibold px-8 py-3 rounded-full transition btn-hover inline-flex items-center gap-2"><i class="fas fa-compass"></i> Explore Categories</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-gray-900 text-gray-300 pt-12 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="text-2xl font-bold mb-3"><span class="text-emerald-400">Uttorer</span><span class="text-amber-400"> Karukaj</span></div>
+          <p class="text-sm">Preserving Northern Bangladesh's heritage through handmade bamboo, jute & traditional crafts. Each purchase empowers rural artisans.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-amber-400 transition">Shop</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition">Categories</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition">About Our Story</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition">Sustainability</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-sm">
+            <li><i class="fas fa-map-marker-alt mr-2 text-amber-400"></i> Rangpur, Bangladesh</li>
+            <li><i class="fas fa-phone-alt mr-2 text-amber-400"></i> +880 1712-345678</li>
+            <li><i class="fas fa-envelope mr-2 text-amber-400"></i> hello@uttorerkarukaj.com</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Follow Us</h4>
+          <div class="flex space-x-4 text-2xl">
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="mt-4"><p class="text-xs">Handcrafted with ❤️ in Bangladesh</p></div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-500">© 2025 Uttorer Karukaj — Authentic Handmade Crafts. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== CART FUNCTIONALITY ==========
+    let cartItems = [];
+    
+    function updateCartBadge() {
+      const totalQty = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+      const badge = document.querySelector('.cart-count');
+      if (badge) badge.innerText = totalQty;
+    }
+    
+    function addToCartLogic(id, name, price) {
+      const existing = cartItems.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cartItems.push({ id, name, price, quantity: 1 });
+      }
+      updateCartBadge();
+      // Toast notification
+      const toast = document.createElement('div');
+      toast.innerText = `✓ ${name} added to cart`;
+      toast.className = "fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-5 py-2 rounded-full text-sm z-50 shadow-lg";
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 1800);
+    }
+    
+    // Cart icon click handler
+    document.querySelector('.cart-btn')?.addEventListener('click', () => {
+      if (cartItems.length === 0) {
+        alert("Your cart is empty. Explore our beautiful handmade collection!");
+      } else {
+        let msg = "🛒 Your Cart:\n\n";
+        cartItems.forEach(i => msg += `${i.name} x${i.quantity} = ৳${i.price * i.quantity}\n`);
+        msg += `\nTotal: ৳${cartItems.reduce((s, i) => s + (i.price * i.quantity), 0)}`;
+        alert(msg);
+      }
+    });
+    
+    // ========== MOBILE MENU TOGGLE ==========
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    // ========== STICKY NAVBAR EFFECT ==========
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 10) {
+        nav.classList.add('shadow-md', 'bg-white/95');
+      } else {
+        nav.classList.remove('shadow-md');
+      }
+    });
+    
+    // ========== ADD SAMPLE PRODUCT ADD BUTTONS FOR DEMO ==========
+    // Add quick "Add Sample" buttons to artisan cards for interactive demo
+    document.querySelectorAll('.artisan-card').forEach((card, idx) => {
+      const productName = card.querySelector('h3')?.innerText || 'Artisan Craft';
+      const price = 890 + (idx * 200);
+      const addBtn = document.createElement('button');
+      addBtn.innerHTML = '<i class="fas fa-cart-plus"></i> Add Sample Product';
+      addBtn.className = 'mt-3 w-full bg-amber-100 hover:bg-amber-200 text-amber-800 text-sm font-medium py-2 rounded-full transition';
+      addBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        addToCartLogic(300 + idx, `${productName} Signature Piece`, price);
+      });
+      card.querySelector('.p-4')?.appendChild(addBtn);
+    });
+    
+    // Optional: Animated counter for brand story (simple)
+    const stats = document.querySelectorAll('.flex-wrap .flex');
+    if (stats.length) {
+      // simple visual effect
+      stats.forEach(stat => {
+        stat.classList.add('transition-all', 'duration-300');
+      });
+    }
+  </script>
+</body>
+</html>

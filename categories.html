@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Uttorer Karukaj | Categories - Handmade Crafts from Bangladesh</title>
+  <!-- Tailwind CSS v3 + Google Fonts + Font Awesome 6 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Category card hover effects */
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .category-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.2);
+    }
+    .category-card:hover .category-image {
+      transform: scale(1.08);
+    }
+    .category-image {
+      transition: transform 0.5s ease-out;
+    }
+    .featured-card {
+      transition: all 0.4s ease;
+    }
+    .featured-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+    }
+    .btn-hover {
+      transition: all 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    }
+    .sticky-nav {
+      backdrop-filter: blur(4px);
+      transition: all 0.2s;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- ========== TOP ANNOUNCEMENT BAR ========== -->
+  <div class="bg-amber-800 text-amber-50 text-sm py-2.5 text-center font-medium tracking-wide shadow-sm">
+    <div class="container mx-auto px-4">
+      <i class="fas fa-hands-clapping mr-2 text-amber-200"></i>
+      Authentic Handmade Products from Northern Bangladesh — Crafted with love & tradition
+    </div>
+  </div>
+
+  <!-- ========== NAVIGATION BAR (Sticky) ========== -->
+  <header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-amber-100 shadow-sm transition-all duration-200">
+    <div class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="text-2xl font-bold tracking-tight">
+        <span class="text-emerald-800">Uttorer</span>
+        <span class="text-amber-700"> Karukaj</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-emerald-700 transition">Home</a>
+        <a href="shop.html" class="hover:text-emerald-700 transition">Shop</a>
+        <a href="index.html" class="text-emerald-700 border-b-2 border-emerald-600 pb-1">Categories</a>
+        <a href="about.html" class="hover:text-emerald-700 transition">About Us</a>
+        <a href="contact.html" class="hover:text-emerald-700 transition">Contact</a>
+      </div>
+
+      <!-- Icons + Mobile menu -->
+      <div class="flex items-center gap-4">
+        <button class="text-gray-600 hover:text-emerald-700 text-xl"><i class="fas fa-search"></i></button>
+        <button class="text-gray-600 hover:text-emerald-700 text-xl relative cart-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="absolute -top-2 -right-3 bg-amber-600 text-white text-xs font-bold rounded-full px-1.5 py-0.5 min-w-[18px] text-center cart-count">0</span>
+        </button>
+        <button class="text-gray-600 hover:text-emerald-700 text-xl"><i class="fas fa-user"></i></button>
+        <button id="mobile-menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-t border-amber-100 pb-3 px-4 flex flex-col space-y-3 text-gray-700 font-medium">
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Home</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Shop</a>
+      <a href="#" class="block py-2 text-emerald-700 font-semibold">Categories</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">About Us</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Contact</a>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO / BANNER ========== -->
+  <section class="relative bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(30,40,20,0.75), rgba(20,30,10,0.7)), url('https://images.pexels.com/photos/5843991/pexels-photo-5843991.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; min-height: 45vh;">
+    <div class="container mx-auto px-4 flex flex-col justify-center items-center text-center h-full min-h-[45vh] py-16">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">Explore Product Categories</h1>
+      <p class="text-lg md:text-xl text-amber-50/90 max-w-2xl">Find Authentic Handmade Bamboo, Jute, and Traditional Crafts from Northern Bangladesh — Each category tells a unique story of heritage.</p>
+    </div>
+  </section>
+
+  <!-- ========== MAIN CATEGORIES GRID ========== -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Browse by <span class="text-emerald-700">Craft Category</span></h2>
+        <div class="w-24 h-1 bg-amber-600 mx-auto mt-3 rounded-full"></div>
+        <p class="text-gray-600 mt-4 max-w-xl mx-auto">Discover the finest handmade collections, each rooted in Bangladeshi tradition</p>
+      </div>
+      
+      <!-- Categories Grid - 6 main categories with hover effects -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Category 1: Bamboo Baskets -->
+        <div class="category-card bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer group" data-category="bamboo-baskets">
+          <div class="relative h-64 overflow-hidden bg-amber-50">
+            <img src="https://images.pexels.com/photos/4013168/pexels-photo-4013168.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bamboo Baskets" class="category-image w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="p-6 text-center">
+            <i class="fas fa-basket-shopping text-3xl text-amber-600 mb-2"></i>
+            <h3 class="font-bold text-2xl text-gray-800 mb-2">Bamboo Baskets</h3>
+            <p class="text-gray-500 mb-3">Handwoven storage solutions</p>
+            <span class="inline-block text-amber-600 font-medium group-hover:text-amber-700 transition">Explore Collection →</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Bamboo Home Decor -->
+        <div class="category-card bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer group" data-category="bamboo-decor">
+          <div class="relative h-64 overflow-hidden bg-amber-50">
+            <img src="https://images.pexels.com/photos/6994344/pexels-photo-6994344.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bamboo Home Decor" class="category-image w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="p-6 text-center">
+            <i class="fas fa-home text-3xl text-amber-600 mb-2"></i>
+            <h3 class="font-bold text-2xl text-gray-800 mb-2">Bamboo Home Decor</h3>
+            <p class="text-gray-500 mb-3">Elegant natural accents</p>
+            <span class="inline-block text-amber-600 font-medium group-hover:text-amber-700 transition">Explore Collection →</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Jute Products -->
+        <div class="category-card bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer group" data-category="jute">
+          <div class="relative h-64 overflow-hidden bg-amber-50">
+            <img src="https://images.pexels.com/photos/4970155/pexels-photo-4970155.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jute Products" class="category-image w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="p-6 text-center">
+            <i class="fas fa-leaf text-3xl text-amber-600 mb-2"></i>
+            <h3 class="font-bold text-2xl text-gray-800 mb-2">Jute Products</h3>
+            <p class="text-gray-500 mb-3">Eco-friendly & sustainable</p>
+            <span class="inline-block text-amber-600 font-medium group-hover:text-amber-700 transition">Explore Collection →</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Traditional Handicrafts -->
+        <div class="category-card bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer group" data-category="traditional">
+          <div class="relative h-64 overflow-hidden bg-amber-50">
+            <img src="https://images.pexels.com/photos/6964675/pexels-photo-6964675.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Traditional Handicrafts" class="category-image w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="p-6 text-center">
+            <i class="fas fa-mask text-3xl text-amber-600 mb-2"></i>
+            <h3 class="font-bold text-2xl text-gray-800 mb-2">Traditional Handicrafts</h3>
+            <p class="text-gray-500 mb-3">Heritage artforms preserved</p>
+            <span class="inline-block text-amber-600 font-medium group-hover:text-amber-700 transition">Explore Collection →</span>
+          </div>
+        </div>
+
+        <!-- Category 5: Lamps & Lighting -->
+        <div class="category-card bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer group" data-category="lamps">
+          <div class="relative h-64 overflow-hidden bg-amber-50">
+            <img src="https://images.pexels.com/photos/5040581/pexels-photo-5040581.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lamps & Lighting" class="category-image w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="p-6 text-center">
+            <i class="fas fa-lightbulb text-3xl text-amber-600 mb-2"></i>
+            <h3 class="font-bold text-2xl text-gray-800 mb-2">Lamps & Lighting</h3>
+            <p class="text-gray-500 mb-3">Handcrafted ambient glow</p>
+            <span class="inline-block text-amber-600 font-medium group-hover:text-amber-700 transition">Explore Collection →</span>
+          </div>
+        </div>
+
+        <!-- Category 6: Decorative Items -->
+        <div class="category-card bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer group" data-category="decorative">
+          <div class="relative h-64 overflow-hidden bg-amber-50">
+            <img src="https://images.pexels.com/photos/5858259/pexels-photo-5858259.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Decorative Items" class="category-image w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="p-6 text-center">
+            <i class="fas fa-palette text-3xl text-amber-600 mb-2"></i>
+            <h3 class="font-bold text-2xl text-gray-800 mb-2">Decorative Items</h3>
+            <p class="text-gray-500 mb-3">Artisanal home accents</p>
+            <span class="inline-block text-amber-600 font-medium group-hover:text-amber-700 transition">Explore Collection →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED CATEGORIES SECTION (Trending / Top-Selling) ========== -->
+  <section class="py-16 bg-gradient-to-r from-emerald-50 to-amber-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">🔥 <span class="text-emerald-700">Trending Categories</span> 🔥</h2>
+        <div class="w-24 h-1 bg-amber-600 mx-auto mt-3 rounded-full"></div>
+        <p class="text-gray-600 mt-4">Most loved by our customers this season</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Featured Category 1: Bamboo Home Decor (Large Card) -->
+        <div class="featured-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group transition-all" data-category="bamboo-decor">
+          <div class="relative h-72 overflow-hidden">
+            <img src="https://images.pexels.com/photos/5858259/pexels-photo-5858259.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending Bamboo Decor" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">#1 Best Seller</span>
+              <h3 class="text-2xl font-bold text-white mt-2">Bamboo Home Decor</h3>
+              <p class="text-amber-100 text-sm">Elegant wall art & accents</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Category 2: Jute Products -->
+        <div class="featured-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group transition-all" data-category="jute">
+          <div class="relative h-72 overflow-hidden">
+            <img src="https://images.pexels.com/photos/6001095/pexels-photo-6001095.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending Jute" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">Eco-Friendly</span>
+              <h3 class="text-2xl font-bold text-white mt-2">Jute Collection</h3>
+              <p class="text-amber-100 text-sm">Sustainable bags & home goods</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Category 3: Lamps & Lighting -->
+        <div class="featured-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group transition-all" data-category="lamps">
+          <div class="relative h-72 overflow-hidden">
+            <img src="https://images.pexels.com/photos/5040581/pexels-photo-5040581.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending Lamps" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">Handcrafted</span>
+              <h3 class="text-2xl font-bold text-white mt-2">Bamboo Lamps</h3>
+              <p class="text-amber-100 text-sm">Warm ambient lighting</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORY BENEFITS / WHY SHOP BY CATEGORY ========== -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-gray-800">Shop with <span class="text-emerald-700">Purpose</span></h2>
+        <p class="text-gray-600 mt-2">Every category supports rural artisans & sustainable practices</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-4xl mx-auto">
+        <div><i class="fas fa-hand-sparkles text-4xl text-amber-600 mb-3"></i><p class="font-semibold">100% Handmade</p><p class="text-sm text-gray-500">Authentic craftsmanship</p></div>
+        <div><i class="fas fa-recycle text-4xl text-amber-600 mb-3"></i><p class="font-semibold">Eco Materials</p><p class="text-sm text-gray-500">Bamboo, Jute, Natural</p></div>
+        <div><i class="fas fa-bangladeshi-taka-sign text-4xl text-amber-600 mb-3"></i><p class="font-semibold">Fair Trade</p><p class="text-sm text-gray-500">Supporting local artisans</p></div>
+        <div><i class="fas fa-truck-fast text-4xl text-amber-600 mb-3"></i><p class="font-semibold">Fast Delivery</p><p class="text-sm text-gray-500">Nationwide shipping</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER (same as homepage) ========== -->
+  <footer class="bg-gray-900 text-gray-300 pt-12 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="text-2xl font-bold mb-3"><span class="text-emerald-400">Uttorer</span><span class="text-amber-400"> Karukaj</span></div>
+          <p class="text-sm">Preserving Northern Bangladesh's heritage through handmade bamboo, jute & traditional crafts. Each purchase empowers rural artisans.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-amber-400 transition">Shop</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition">Categories</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition">About Our Story</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition">Sustainability</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-sm">
+            <li><i class="fas fa-map-marker-alt mr-2 text-amber-400"></i> Rangpur, Bangladesh</li>
+            <li><i class="fas fa-phone-alt mr-2 text-amber-400"></i> +880 1712-345678</li>
+            <li><i class="fas fa-envelope mr-2 text-amber-400"></i> hello@uttorerkarukaj.com</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Follow Us</h4>
+          <div class="flex space-x-4 text-2xl">
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="mt-4"><p class="text-xs">Handcrafted with ❤️ in Bangladesh</p></div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-500">© 2025 Uttorer Karukaj — Authentic Handmade Crafts. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== CART FUNCTIONALITY ==========
+    let cartItems = [];
+    
+    function updateCartBadge() {
+      const totalQty = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+      const badge = document.querySelector('.cart-count');
+      if (badge) badge.innerText = totalQty;
+    }
+    
+    function addToCartLogic(id, name, price) {
+      const existing = cartItems.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cartItems.push({ id, name, price, quantity: 1 });
+      }
+      updateCartBadge();
+      // Show toast notification
+      const toast = document.createElement('div');
+      toast.innerText = `✓ ${name} added to cart`;
+      toast.className = "fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-5 py-2 rounded-full text-sm z-50 shadow-lg";
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 1800);
+    }
+    
+    // Cart icon click handler
+    document.querySelector('.cart-btn')?.addEventListener('click', () => {
+      if (cartItems.length === 0) {
+        alert("Your cart is empty. Explore our beautiful categories and add some treasures!");
+      } else {
+        let msg = "🛒 Your Cart:\n\n";
+        cartItems.forEach(i => msg += `${i.name} x${i.quantity} = ৳${i.price * i.quantity}\n`);
+        msg += `\nTotal: ৳${cartItems.reduce((s, i) => s + (i.price * i.quantity), 0)}`;
+        alert(msg);
+      }
+    });
+    
+    // ========== CATEGORY CLICK HANDLER (Navigate to Shop with filter) ==========
+    // Map categories to filter values (matching shop page filter structure)
+    const categoryMap = {
+      'bamboo-baskets': 'bamboo',
+      'bamboo-decor': 'decor',
+      'jute': 'jute',
+      'traditional': 'traditional',
+      'lamps': 'decor',
+      'decorative': 'decor'
+    };
+    
+    // Add click event to all category cards
+    document.querySelectorAll('.category-card, .featured-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Prevent triggering if clicking on nested interactive elements
+        if (e.target.closest('.add-to-cart-btn')) return;
+        
+        let categoryKey = card.getAttribute('data-category');
+        if (!categoryKey) {
+          // For featured cards, get from inner data
+          if (card.classList.contains('featured-card')) {
+            const imgAlt = card.querySelector('h3')?.innerText.toLowerCase();
+            if (imgAlt?.includes('bamboo home')) categoryKey = 'bamboo-decor';
+            else if (imgAlt?.includes('jute')) categoryKey = 'jute';
+            else if (imgAlt?.includes('lamp')) categoryKey = 'lamps';
+            else categoryKey = 'bamboo-baskets';
+          }
+        }
+        
+        const filterValue = categoryMap[categoryKey] || 'all';
+        // Redirect to shop page with category filter parameter
+        // Since we're in a single HTML demo, we'll show an alert with the category selection
+        // In production, this would redirect to shop.html?category=xxx
+        const categoryNames = {
+          'bamboo-baskets': 'Bamboo Baskets',
+          'bamboo-decor': 'Bamboo Home Decor',
+          'jute': 'Jute Products',
+          'traditional': 'Traditional Handicrafts',
+          'lamps': 'Lamps & Lighting',
+          'decorative': 'Decorative Items'
+        };
+        
+        alert(`✨ Explore ${categoryNames[categoryKey] || 'this category'} ✨\n\nYou'll be redirected to our Shop page filtered by ${categoryNames[categoryKey] || 'selected category'}.\n\nIn a live site, this would take you to the full product collection.`);
+        
+        // For demo purposes, we could simulate adding a sample product from this category
+        // But we'll just show the message as per requirement
+      });
+    });
+    
+    // ========== MOBILE MENU TOGGLE ==========
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    // ========== STICKY NAVBAR EFFECT ==========
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 10) {
+        nav.classList.add('shadow-md', 'bg-white/95');
+      } else {
+        nav.classList.remove('shadow-md');
+      }
+    });
+    
+    // ========== ADD SAMPLE PRODUCT TO CART FOR DEMO (Optional) ==========
+    // Add a demo product to showcase cart functionality
+    // Users can click on any "Add to Cart" from category cards? We'll add a small floating demo
+    // Not needed but we can add quick add buttons on featured cards? No requirement but adds interactivity
+    // For better UX, add a subtle demo button on featured cards
+    const featuredCards = document.querySelectorAll('.featured-card');
+    featuredCards.forEach((card, idx) => {
+      const addDemoBtn = document.createElement('button');
+      addDemoBtn.innerHTML = '<i class="fas fa-cart-plus"></i> Quick Add';
+      addDemoBtn.className = 'absolute bottom-4 right-4 bg-amber-600 hover:bg-amber-700 text-white text-xs font-medium px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md';
+      addDemoBtn.style.zIndex = '20';
+      const title = card.querySelector('h3')?.innerText || 'Craft Item';
+      const price = idx === 0 ? 1890 : (idx === 1 ? 1250 : 1590);
+      addDemoBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        addToCartLogic(999 + idx, title, price);
+      });
+      const relativeDiv = card.querySelector('.relative');
+      if (relativeDiv) relativeDiv.appendChild(addDemoBtn);
+    });
+    
+    // Also add to regular category cards a quick add button for demo
+    document.querySelectorAll('.category-card').forEach((card, idx) => {
+      const quickAdd = document.createElement('button');
+      quickAdd.innerHTML = '<i class="fas fa-cart-plus"></i> Add Sample';
+      quickAdd.className = 'mt-2 text-xs bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full transition w-full';
+      quickAdd.style.marginTop = '8px';
+      const categoryName = card.querySelector('h3')?.innerText || 'Product';
+      const price = 890 + (idx * 150);
+      quickAdd.addEventListener('click', (e) => {
+        e.stopPropagation();
+        addToCartLogic(500 + idx, `${categoryName} (Sample)`, price);
+      });
+      const textDiv = card.querySelector('.p-6');
+      if (textDiv) textDiv.appendChild(quickAdd);
+    });
+  </script>
+</body>
+</html>

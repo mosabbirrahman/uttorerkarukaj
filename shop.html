@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Uttorer Karukaj | Shop Handmade Crafts from Bangladesh</title>
+  <!-- Tailwind CSS v3 + Google Fonts + Font Awesome 6 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .product-card {
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 30px -12px rgba(0, 0, 0, 0.2);
+    }
+    .btn-hover {
+      transition: all 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    }
+    .filter-btn.active {
+      background-color: #b45309;
+      color: white;
+      border-color: #b45309;
+    }
+    .sticky-nav {
+      backdrop-filter: blur(4px);
+      transition: all 0.2s;
+    }
+    .quick-view-overlay {
+      transition: opacity 0.25s ease;
+    }
+    select:focus, button:focus {
+      outline: none;
+      ring: 2px solid #2c5e2e;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- ========== TOP ANNOUNCEMENT BAR ========== -->
+  <div class="bg-amber-800 text-amber-50 text-sm py-2.5 text-center font-medium tracking-wide shadow-sm">
+    <div class="container mx-auto px-4">
+      <i class="fas fa-hands-clapping mr-2 text-amber-200"></i>
+      Authentic Handmade Products from Northern Bangladesh — Crafted with love & tradition
+    </div>
+  </div>
+
+  <!-- ========== NAVIGATION BAR (Sticky) ========== -->
+  <header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-amber-100 shadow-sm transition-all duration-200">
+    <div class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="text-2xl font-bold tracking-tight">
+        <span class="text-emerald-800">Uttorer</span>
+        <span class="text-amber-700"> Karukaj</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-emerald-700 transition">Home</a>
+        <a href="" class="text-emerald-700 border-b-2 border-emerald-600 pb-1">Shop</a>
+        <a href="categories.html" class="hover:text-emerald-700 transition">Categories</a>
+        <a href="about.html" class="hover:text-emerald-700 transition">About Us</a>
+        <a href="contact.html" class="hover:text-emerald-700 transition">Contact</a>
+      </div>
+
+      <!-- Icons + Mobile menu -->
+      <div class="flex items-center gap-4">
+        <button class="text-gray-600 hover:text-emerald-700 text-xl"><i class="fas fa-search"></i></button>
+        <button class="text-gray-600 hover:text-emerald-700 text-xl relative cart-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="absolute -top-2 -right-3 bg-amber-600 text-white text-xs font-bold rounded-full px-1.5 py-0.5 min-w-[18px] text-center cart-count">0</span>
+        </button>
+        <button class="text-gray-600 hover:text-emerald-700 text-xl"><i class="fas fa-user"></i></button>
+        <button id="mobile-menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-t border-amber-100 pb-3 px-4 flex flex-col space-y-3 text-gray-700 font-medium">
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Home</a>
+      <a href="#" class="block py-2 text-emerald-700 font-semibold">Shop</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Categories</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">About Us</a>
+      <a href="#" class="block py-2 hover:text-emerald-700 transition">Contact</a>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO / BANNER ========== -->
+  <section class="relative bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(30,40,20,0.75), rgba(20,30,10,0.7)), url('https://images.pexels.com/photos/5716858/pexels-photo-5716858.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; min-height: 40vh;">
+    <div class="container mx-auto px-4 flex flex-col justify-center items-center text-center h-full min-h-[40vh] py-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">Explore Our Handmade Crafts</h1>
+      <p class="text-lg md:text-xl text-amber-50/90 max-w-2xl">Authentic Bamboo, Jute, and Traditional Products from Northern Bangladesh — Each piece tells a story of heritage & sustainability.</p>
+    </div>
+  </section>
+
+  <!-- ========== SHOP SECTION WITH FILTERS & PRODUCT GRID ========== -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <!-- Filters & Sorting Row -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-5 mb-10 pb-3 border-b border-amber-100">
+        <div class="flex flex-wrap gap-3">
+          <button data-cat="all" class="filter-btn active px-5 py-2 rounded-full text-sm font-medium bg-amber-600 text-white border border-amber-600 transition">All Products</button>
+          <button data-cat="bamboo" class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-amber-100 transition">Bamboo Baskets</button>
+          <button data-cat="decor" class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-amber-100 transition">Home Decor</button>
+          <button data-cat="jute" class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-amber-100 transition">Jute Products</button>
+          <button data-cat="traditional" class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-amber-100 transition">Traditional Crafts</button>
+        </div>
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <i class="fas fa-sort-amount-down-alt text-amber-700"></i>
+          <select id="sort-select" class="border border-amber-200 rounded-full px-4 py-2 text-sm bg-white focus:ring-2 focus:ring-amber-300">
+            <option value="default">Sort by: Featured</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="name_asc">Name: A-Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Grid Container -->
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <!-- products will be injected via JS -->
+      </div>
+
+      <!-- Pagination (Load More) -->
+      <div class="flex justify-center mt-12">
+        <button id="load-more-btn" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-3 rounded-full shadow-md transition btn-hover flex items-center gap-2">
+          <i class="fas fa-sync-alt"></i> Load More Products
+        </button>
+      </div>
+      <div id="end-message" class="text-center text-gray-500 mt-4 hidden">✨ You've explored all our handmade treasures! ✨</div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED / PROMOTIONAL SECTION (Top Sellers) ========== -->
+  <section class="py-14 bg-gradient-to-r from-emerald-50 to-amber-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">✨ Top Selling Treasures ✨</h2>
+      <p class="text-gray-600 mb-8">Handpicked favorites loved by our customers</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto" id="top-sellers-grid">
+        <!-- dynamic top sellers -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER (same as homepage) ========== -->
+  <footer class="bg-gray-900 text-gray-300 pt-12 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div><div class="text-2xl font-bold mb-3"><span class="text-emerald-400">Uttorer</span><span class="text-amber-400"> Karukaj</span></div><p class="text-sm">Preserving Northern Bangladesh's heritage through handmade bamboo, jute & traditional crafts. Each purchase empowers rural artisans.</p></div>
+        <div><h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4><ul class="space-y-2 text-sm"><li><a href="#" class="hover:text-amber-400 transition">Shop</a></li><li><a href="#" class="hover:text-amber-400 transition">About Our Story</a></li><li><a href="#" class="hover:text-amber-400 transition">Sustainability</a></li><li><a href="#" class="hover:text-amber-400 transition">FAQs</a></li></ul></div>
+        <div><h4 class="text-white font-semibold text-lg mb-4">Contact Info</h4><ul class="space-y-2 text-sm"><li><i class="fas fa-map-marker-alt mr-2 text-amber-400"></i> Rangpur, Bangladesh</li><li><i class="fas fa-phone-alt mr-2 text-amber-400"></i> +880 1712-345678</li><li><i class="fas fa-envelope mr-2 text-amber-400"></i> hello@uttorerkarukaj.com</li></ul></div>
+        <div><h4 class="text-white font-semibold text-lg mb-4">Follow Us</h4><div class="flex space-x-4 text-2xl"><a href="#" class="hover:text-amber-400"><i class="fab fa-facebook"></i></a><a href="#" class="hover:text-amber-400"><i class="fab fa-instagram"></i></a><a href="#" class="hover:text-amber-400"><i class="fab fa-pinterest"></i></a><a href="#" class="hover:text-amber-400"><i class="fab fa-youtube"></i></a></div><div class="mt-4"><p class="text-xs">Handcrafted with ❤️ in Bangladesh</p></div></div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-500">© 2025 Uttorer Karukaj — Authentic Handmade Crafts. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ---------- PRODUCT DATABASE (30 products for realistic pagination) ----------
+    const allProducts = [
+      { id: 1, name: "Handwoven Bamboo Tray", price: 890, category: "bamboo", img: "https://images.pexels.com/photos/5716858/pexels-photo-5716858.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: true },
+      { id: 2, name: "Jute Macrame Wall Hanging", price: 1250, category: "jute", img: "https://images.pexels.com/photos/5072493/pexels-photo-5072493.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: true },
+      { id: 3, name: "Bamboo Storage Basket", price: 1490, category: "bamboo", img: "https://images.pexels.com/photos/5709034/pexels-photo-5709034.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 4, name: "Traditional Nakshi Kantha", price: 2150, category: "traditional", img: "https://images.pexels.com/photos/4013161/pexels-photo-4013161.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: true },
+      { id: 5, name: "Bamboo Wind Chime", price: 590, category: "bamboo", img: "https://images.pexels.com/photos/6914827/pexels-photo-6914827.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 6, name: "Jute & Cotton Tote Bag", price: 750, category: "jute", img: "https://images.pexels.com/photos/6001095/pexels-photo-6001095.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 7, name: "Handcrafted Bamboo Lamp", price: 1890, category: "decor", img: "https://images.pexels.com/photos/5040581/pexels-photo-5040581.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: true },
+      { id: 8, name: "Decorative Jute Rug", price: 2350, category: "jute", img: "https://images.pexels.com/photos/4226797/pexels-photo-4226797.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 9, name: "Bamboo Plant Holder", price: 680, category: "bamboo", img: "https://images.pexels.com/photos/6543778/pexels-photo-6543778.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 10, name: "Handwoven Jute Bag", price: 890, category: "jute", img: "https://images.pexels.com/photos/4986369/pexels-photo-4986369.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 11, name: "Bamboo Wall Art Panel", price: 1750, category: "decor", img: "https://images.pexels.com/photos/5858259/pexels-photo-5858259.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 12, name: "Traditional Wooden Mask", price: 2450, category: "traditional", img: "https://images.pexels.com/photos/10006228/pexels-photo-10006228.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: true },
+      { id: 13, name: "Jute Coaster Set", price: 450, category: "jute", img: "https://images.pexels.com/photos/4194881/pexels-photo-4194881.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 14, name: "Bamboo Kitchen Utensils", price: 1200, category: "bamboo", img: "https://images.pexels.com/photos/5409753/pexels-photo-5409753.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 15, name: "Handwoven Dhurrie Rug", price: 3100, category: "traditional", img: "https://images.pexels.com/photos/5970199/pexels-photo-5970199.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 16, name: "Bamboo Tea Light Holder", price: 550, category: "decor", img: "https://images.pexels.com/photos/7539968/pexels-photo-7539968.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: true },
+      { id: 17, name: "Jute Shoulder Bag", price: 1290, category: "jute", img: "https://images.pexels.com/photos/4998902/pexels-photo-4998902.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false },
+      { id: 18, name: "Bamboo Magazine Rack", price: 1650, category: "bamboo", img: "https://images.pexels.com/photos/5699753/pexels-photo-5699753.jpeg?auto=compress&cs=tinysrgb&w=400", isTopSeller: false }
+    ];
+
+    let currentCategory = "all";
+    let currentSort = "default";
+    let visibleCount = 8;     // initial products shown
+    const productsPerLoad = 6;
+
+    // Filter & sort products
+    function getFilteredSortedProducts() {
+      let filtered = currentCategory === "all" ? [...allProducts] : allProducts.filter(p => p.category === currentCategory);
+      // Sorting
+      if (currentSort === "price_asc") filtered.sort((a,b) => a.price - b.price);
+      else if (currentSort === "price_desc") filtered.sort((a,b) => b.price - a.price);
+      else if (currentSort === "name_asc") filtered.sort((a,b) => a.name.localeCompare(b.name));
+      else filtered.sort((a,b) => a.id - b.id); // default featured order
+      return filtered;
+    }
+
+    function renderProductGrid() {
+      const filtered = getFilteredSortedProducts();
+      const productsToShow = filtered.slice(0, visibleCount);
+      const grid = document.getElementById("products-grid");
+      if (!grid) return;
+      
+      if (productsToShow.length === 0 && visibleCount > 0) {
+        grid.innerHTML = `<div class="col-span-full text-center py-16 text-gray-500"><i class="fas fa-box-open text-4xl mb-3"></i><p>No products found in this category. Try another filter!</p></div>`;
+        document.getElementById("load-more-btn").classList.add("hidden");
+        document.getElementById("end-message").classList.add("hidden");
+        return;
+      }
+      
+      grid.innerHTML = productsToShow.map(product => `
+        <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group">
+          <div class="relative h-64 overflow-hidden bg-gray-100">
+            <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <button data-quick-id="${product.id}" class="quick-view-btn absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm text-amber-800 text-sm font-medium px-4 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:bg-amber-600 hover:text-white"><i class="fas fa-eye mr-1"></i> Quick View</button>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="font-semibold text-lg text-gray-800 line-clamp-1">${product.name}</h3>
+            <div class="text-emerald-700 font-bold text-xl mt-1">৳ ${product.price}</div>
+            <button data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" class="add-to-cart-btn mt-3 w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-2.5 rounded-full transition flex items-center justify-center gap-2"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+      `).join('');
+      
+      // attach events for new buttons
+      attachCartEvents();
+      attachQuickViewEvents();
+      
+      const loadBtn = document.getElementById("load-more-btn");
+      const endMsg = document.getElementById("end-message");
+      if (visibleCount >= filtered.length) {
+        loadBtn.classList.add("hidden");
+        endMsg.classList.remove("hidden");
+      } else {
+        loadBtn.classList.remove("hidden");
+        endMsg.classList.add("hidden");
+      }
+    }
+
+    // Render Top Sellers section
+    function renderTopSellers() {
+      const topSellers = allProducts.filter(p => p.isTopSeller === true).slice(0, 3);
+      const container = document.getElementById("top-sellers-grid");
+      if(container && topSellers.length){
+        container.innerHTML = topSellers.map(p => `
+          <div class="bg-white rounded-xl shadow-md p-4 flex items-center gap-4 hover:shadow-lg transition">
+            <img src="${p.img}" class="w-20 h-20 rounded-lg object-cover" alt="${p.name}">
+            <div class="text-left"><h4 class="font-bold">${p.name}</h4><p class="text-amber-700 font-semibold">৳ ${p.price}</p><button data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" class="top-seller-add text-xs bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full mt-1 hover:bg-emerald-200">Add to Cart</button></div>
+          </div>
+        `).join('');
+        document.querySelectorAll('.top-seller-add').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const id = parseInt(btn.getAttribute('data-id'));
+            const name = btn.getAttribute('data-name');
+            const price = parseInt(btn.getAttribute('data-price'));
+            addToCartLogic(id, name, price);
+          });
+        });
+      }
+    }
+
+    // Cart functionality
+    let cartItems = [];
+    function updateCartBadge() {
+      const totalQty = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+      const badge = document.querySelector('.cart-count');
+      if (badge) badge.innerText = totalQty;
+    }
+    function addToCartLogic(id, name, price) {
+      const existing = cartItems.find(item => item.id === id);
+      if (existing) existing.quantity += 1;
+      else cartItems.push({ id, name, price, quantity: 1 });
+      updateCartBadge();
+      const toast = document.createElement('div');
+      toast.innerText = `✓ ${name} added to cart`;
+      toast.className = "fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-5 py-2 rounded-full text-sm z-50 shadow-lg";
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 1800);
+    }
+    function attachCartEvents() {
+      document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.removeEventListener('click', handleCartClick);
+        btn.addEventListener('click', handleCartClick);
+      });
+    }
+    function handleCartClick(e) {
+      const btn = e.currentTarget;
+      const id = parseInt(btn.getAttribute('data-id'));
+      const name = btn.getAttribute('data-name');
+      const price = parseInt(btn.getAttribute('data-price'));
+      addToCartLogic(id, name, price);
+    }
+    function attachQuickViewEvents() {
+      document.querySelectorAll('.quick-view-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const prodId = parseInt(btn.getAttribute('data-quick-id'));
+          const product = allProducts.find(p => p.id === prodId);
+          if(product) alert(`🖼️ ${product.name}\n💰 Price: ৳ ${product.price}\n🏷️ Category: ${product.category}\n✨ Handmade with love in Bangladesh.`);
+        });
+      });
+    }
+
+    // Load more logic
+    function loadMore() {
+      const filteredTotal = getFilteredSortedProducts().length;
+      if (visibleCount < filteredTotal) {
+        visibleCount = Math.min(visibleCount + productsPerLoad, filteredTotal);
+        renderProductGrid();
+      }
+    }
+
+    // Event listeners for filters & sorting
+    function initFilters() {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active', 'bg-amber-600', 'text-white'));
+          btn.classList.add('active', 'bg-amber-600', 'text-white');
+          currentCategory = btn.getAttribute('data-cat');
+          visibleCount = 8;
+          renderProductGrid();
+        });
+      });
+      document.getElementById('sort-select').addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        visibleCount = 8;
+        renderProductGrid();
+      });
+      document.getElementById('load-more-btn').addEventListener('click', loadMore);
+    }
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // sticky navbar effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 10) nav.classList.add('shadow-md', 'bg-white/95');
+      else nav.classList.remove('shadow-md');
+    });
+
+    // Cart icon click preview
+    document.querySelector('.cart-btn')?.addEventListener('click', () => {
+      if(cartItems.length === 0) alert("Your cart is empty. Add beautiful crafts!");
+      else {
+        let msg = "🛒 Cart Items:\n";
+        cartItems.forEach(i => msg += `${i.name} x${i.quantity} = ৳${i.price * i.quantity}\n`);
+        msg += `\nTotal: ৳${cartItems.reduce((s,i)=> s+(i.price*i.quantity),0)}`;
+        alert(msg);
+      }
+    });
+
+    // Initial Render
+    renderProductGrid();
+    renderTopSellers();
+    initFilters();
+  </script>
+</body>
+</html>
